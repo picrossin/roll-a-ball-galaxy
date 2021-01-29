@@ -3,7 +3,8 @@ using UnityEngine;
 public class Pacer : MonoBehaviour
 {
     [SerializeField] private Vector3 rotationVector;
-    
+    [SerializeField] private PlayerController player;
+
     private GameObject _parent;
     
     private void Start()
@@ -14,7 +15,10 @@ public class Pacer : MonoBehaviour
     }
 
     private void Update()
-    {
-        transform.parent.rotation *= Quaternion.Euler(rotationVector);
+    {   
+        if (player.IsRunning)
+        {
+            transform.parent.rotation *= Quaternion.Euler(rotationVector);
+        }
     }
 }
