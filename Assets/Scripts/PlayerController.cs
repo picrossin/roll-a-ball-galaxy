@@ -45,8 +45,8 @@ public class PlayerController : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Escape))
         {
             _isRunning = !_isRunning;
-        } 
-        
+        }
+        winText.text = _isRunning ? "" : "Paused";
         Time.timeScale = _isRunning ? 1 : 0;
         _audioListener.enabled = _isRunning;
     }
