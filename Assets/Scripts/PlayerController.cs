@@ -12,10 +12,14 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private Transform movementHelper;
     [SerializeField] private AudioClip collectSound;
     [SerializeField] private AudioSource _audioSource;
-    
+    [SerializeField] private AudioListener _audioListener;
+    [SerializeField] private ParticleSystem _ps;
+
     private bool _isRunning;
     public bool IsRunning => _isRunning;
-
+    
+    private ParticleSystem.MainModule _psMain;
+    private ParticleSystem.TrailModule _psTrails;
     private Vector2 _input;
     private Rigidbody _rigidbody;
     private int _count;
@@ -25,6 +29,8 @@ public class PlayerController : MonoBehaviour
     private void Start()
     {
         _rigidbody = GetComponent<Rigidbody>();
+        _psMain = _ps.main;
+        _psTrails = _ps.trails;
         SetCountText();
         winText.text = "";
         _isRunning = true;
@@ -42,6 +48,7 @@ public class PlayerController : MonoBehaviour
         } 
         
         Time.timeScale = _isRunning ? 1 : 0;
+        _audioListener.enabled = _isRunning;
     }
 
     private void FixedUpdate()
@@ -66,6 +73,8 @@ public class PlayerController : MonoBehaviour
             other.gameObject.SetActive(false);
             _audioSource.PlayOneShot(collectSound, 0.5f);
             _count++;
+            _psMain.maxParticles += 5;
+            _psTrails.lifetimeMultiplier += 0.025f;
             SetCountText();
         }
     }
