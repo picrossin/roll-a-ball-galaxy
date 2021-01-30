@@ -7,6 +7,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] [Range(1f, 100f)] private float speed = 2f;
     [SerializeField] private TextMeshProUGUI countText;
     [SerializeField] private TextMeshProUGUI winText;
+    [SerializeField] private TextMeshProUGUI pauseText;
     [SerializeField] private Transform gravityCenter;
     [SerializeField] [Range(0f, 100f)] private float gravityConstant = 9.81f;
     [SerializeField] private Transform movementHelper;
@@ -46,7 +47,7 @@ public class PlayerController : MonoBehaviour
         {
             _isRunning = !_isRunning;
         }
-        winText.text = _isRunning ? "" : "Paused";
+        pauseText.text = _isRunning ? "" : "Paused";
         Time.timeScale = _isRunning ? 1 : 0;
         _audioListener.enabled = _isRunning;
     }
