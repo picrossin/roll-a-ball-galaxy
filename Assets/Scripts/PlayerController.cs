@@ -1,4 +1,4 @@
-﻿using TMPro;
+using TMPro;
 using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody))]
@@ -10,6 +10,8 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private Transform gravityCenter;
     [SerializeField] [Range(0f, 100f)] private float gravityConstant = 9.81f;
     [SerializeField] private Transform movementHelper;
+    [SerializeField] private AudioClip collectSound;
+    [SerializeField] private AudioSource _audioSource;
     
     private bool _isRunning;
     public bool IsRunning => _isRunning;
@@ -62,6 +64,7 @@ public class PlayerController : MonoBehaviour
         if (other.gameObject.CompareTag("Pick Up"))
         {
             other.gameObject.SetActive(false);
+            _audioSource.PlayOneShot(collectSound, 0.5f);
             _count++;
             SetCountText();
         }
