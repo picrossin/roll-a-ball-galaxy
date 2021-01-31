@@ -13,7 +13,6 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private Transform movementHelper;
     [SerializeField] private AudioClip collectSound;
     [SerializeField] private AudioSource _audioSource;
-    [SerializeField] private AudioListener _audioListener;
     [SerializeField] private ParticleSystem _ps;
 
     private bool _isRunning;
@@ -49,7 +48,7 @@ public class PlayerController : MonoBehaviour
         }
         pauseText.text = _isRunning ? "" : "Paused";
         Time.timeScale = _isRunning ? 1 : 0;
-        _audioListener.enabled = _isRunning;
+        AudioListener.pause = !_isRunning;
     }
 
     private void FixedUpdate()
