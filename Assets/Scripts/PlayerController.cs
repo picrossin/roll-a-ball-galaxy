@@ -4,6 +4,7 @@ using UnityEngine;
 [RequireComponent(typeof(Rigidbody))]
 public class PlayerController : MonoBehaviour
 {
+    [SerializeField] private bool controlWithKeyboard;
     [SerializeField] [Range(1f, 100f)] private float speed = 2f;
     [SerializeField] private TextMeshProUGUI countText;
     [SerializeField] private TextMeshProUGUI winText;
@@ -63,7 +64,10 @@ public class PlayerController : MonoBehaviour
                                       (movementHelper.position - gravityCenter.position).normalized) * 
                                   movementHelper.rotation * Quaternion.Euler(0, _input.x, 0);
 
-        _rigidbody.AddForce(movementHelper.forward * _input.y * speed);
+        if (controlWithKeyboard)
+        {
+            _rigidbody.AddForce(movementHelper.forward * _input.y * speed);
+        }
     }
 
     private void OnTriggerEnter(Collider other)
