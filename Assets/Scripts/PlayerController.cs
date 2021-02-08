@@ -1,5 +1,6 @@
 using TMPro;
 using UnityEngine;
+using Valve.VR;
 
 [RequireComponent(typeof(Rigidbody))]
 public class PlayerController : MonoBehaviour
@@ -58,16 +59,25 @@ public class PlayerController : MonoBehaviour
         _rigidbody.AddForce((gravityCenter.position - transform.position).normalized * gravityConstant);
 
         // Movement
-        movementHelper.position = transform.position;
-        movementHelper.rotation = Quaternion.FromToRotation(
-                                      movementHelper.up, 
-                                      (movementHelper.position - gravityCenter.position).normalized) * 
-                                  movementHelper.rotation * Quaternion.Euler(0, _input.x, 0);
-
+        Vector3 movementForce = Vector3.zero;
+        float steering = 0f;
         if (controlWithKeyboard)
         {
-            _rigidbody.AddForce(movementHelper.forward * _input.y * speed);
+            movementForce = movementHelper.forward * _input.y * speed;
+            steering = _input.x;
         }
+        else
+        {
+            movementForce = movementHelper.forward * SteamVR_Actions.buggy.Throttle[SteamVR_Input_Sources.Any].axis * speed;
+            steering = SteamVR_Actions.buggy.Steering[SteamVR_Input_Sources.Any].axis.x;
+        }
+
+        movementHelper.position = transform.position;
+        movementHelper.rotation = Quaternion.FromToRotation(
+                                      movementHelper.up,
+                                      (movementHelper.position - gravityCenter.position).normalized) *
+                                  movementHelper.rotation * Quaternion.Euler(0, steering, 0);
+        _rigidbody.AddForce(movementForce);
     }
 
     private void OnTriggerEnter(Collider other)
