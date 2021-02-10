@@ -70,6 +70,7 @@ public class PlayerController : MonoBehaviour
         {
             movementForce = movementHelper.forward * SteamVR_Actions.buggy.Throttle[SteamVR_Input_Sources.Any].axis * speed;
             steering = SteamVR_Actions.buggy.Steering[SteamVR_Input_Sources.Any].axis.x;
+            Debug.Log($"throttle: {SteamVR_Actions.buggy.Throttle[SteamVR_Input_Sources.Any].axis}, steering x: {SteamVR_Actions.buggy.Steering[SteamVR_Input_Sources.Any].axis.x}");
         }
 
         movementHelper.position = transform.position;
