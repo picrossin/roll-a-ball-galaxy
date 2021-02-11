@@ -44202,7 +44202,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 786cf0d37b5b9c1428fd9c74266d3b5a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  controlWithKeyboard: 1
+  controlWithKeyboard: 0
   speed: 20
   countText: {fileID: 531678962}
   winText: {fileID: 892600544}
