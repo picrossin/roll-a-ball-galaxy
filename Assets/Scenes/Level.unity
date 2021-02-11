@@ -9578,8 +9578,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 311170857}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 70, z: 0}
-  m_LocalScale: {x: 10, y: 10, z: 10}
+  m_LocalPosition: {x: 0, y: 139.8, z: 0}
+  m_LocalScale: {x: 18.057, y: 18.057, z: 18.057}
   m_Children:
   - {fileID: 147927210}
   m_Father: {fileID: 868985170}
@@ -18626,7 +18626,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-24924
+  m_Name: pb_Mesh56792
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -36097,7 +36097,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 956937260}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 26.5, z: 0}
+  m_LocalPosition: {x: 0, y: 34, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 190578667}
@@ -40605,7 +40605,7 @@ Transform:
   m_GameObject: {fileID: 1095953694}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 45, y: 45, z: 45}
+  m_LocalScale: {x: 60, y: 60, z: 60}
   m_Children: []
   m_Father: {fileID: 747914360}
   m_RootOrder: 0
@@ -42925,12 +42925,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   controlWithKeyboard: 0
-  speed: 15
+  speed: 20
   countText: {fileID: 531678962}
   winText: {fileID: 892600544}
   pauseText: {fileID: 1019418971}
   gravityCenter: {fileID: 1095953698}
-  gravityConstant: 33.9
+  gravityConstant: 57.1
   movementHelper: {fileID: 190578667}
   collectSound: {fileID: 8300000, guid: 2dd8a1f7cd46b5c3b803fc2ada6e2bc4, type: 3}
   _audioSource: {fileID: 190578668}
@@ -50433,7 +50433,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1426356378}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 26.5, z: 0}
+  m_LocalPosition: {x: 0, y: 34, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1426216774}
@@ -57190,6 +57190,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Moving Pickup (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1081920085025100787, guid: 41d4bba69dc948d41a326382a05b9982,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 1081920085025100787, guid: 41d4bba69dc948d41a326382a05b9982,
         type: 3}
@@ -72761,7 +72766,7 @@ Transform:
   m_GameObject: {fileID: 2109051710}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 3, y: 3, z: 3}
+  m_LocalScale: {x: 4, y: 4, z: 4}
   m_Children:
   - {fileID: 342900027}
   - {fileID: 75072217}
@@ -74925,6 +74930,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Moving Pickup
+      objectReference: {fileID: 0}
+    - target: {fileID: 1081920085025100787, guid: 41d4bba69dc948d41a326382a05b9982,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 1081920085025100787, guid: 41d4bba69dc948d41a326382a05b9982,
         type: 3}
